@@ -1,0 +1,33 @@
+ALGORITHM sentence
+VAR
+    t: ARRAY_OF char[10];
+    s,phrase:STRING;
+    l,j,espace,voyelle:INTEGER;
+BEGIN
+ write("donner une phrase");read(phrase);
+ s=phrase+".";
+ t=["a","o","e","i","u","A","O","E","I","U"]
+ l:=0;
+ espace:=0;
+ voyelle:=0;
+ j:=0;
+WHILE (s[l]<>".") DO
+    
+    IF (s[l]==" ") THEN
+    espace ++;
+    END_IF()
+
+FOR j FROM 0 TO 9 STEP step  DO
+ IF (s[l]==t[j]) THEN
+    voyelle ++;
+ END_IF()
+END_FOR
+ l++;
+END_WHILE()
+ 
+ write(" le nombre des mots dans cette phrase est:" espace++);
+ write("le nombre des voyelles dans cette phrase est:" voyelle);
+ write(" la longueur de cette phrase est:" l++);
+
+
+END
